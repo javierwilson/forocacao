@@ -1,0 +1,29 @@
+{% extends basehtml %}
+{% load static %}
+{% load thumbnail %}
+
+{% block title %}Preguntas frecuentes{% endblock %}
+
+{% block content %}
+<div class="container internal">
+
+<h1>Preguntas frecuentes</h1>
+<div>
+{% for object in object_list %}
+    <div class="col-md-5 clearfix">
+        <h3><a href="#">{{ object.question }}</a></h3>
+        <div class="contenido clear">
+        </div>
+    </div>
+    <div class='clearfix'></div>
+    <div class="col-md-5 clearfix">
+        {{ object.answer|safe }}
+    </div>
+    <div class="col-md-10"><hr class="separador"/></div>
+{% empty %}
+    <h2>No hay datos.</h2>
+{% endfor %}
+</div>
+
+</div>
+{% endblock content %}

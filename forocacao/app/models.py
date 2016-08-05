@@ -298,6 +298,20 @@ class EventBadge(models.Model):
 
 
 
+class Question(models.Model):
+    event = models.ForeignKey('Event', verbose_name=_('Event'))
+    question = models.CharField(max_length=300, verbose_name=_('Pregunta'))
+    answer = models.TextField(null=True, blank=True, verbose_name=_('Respuesta'))
+
+    class Meta:
+        ordering = ['question']
+        verbose_name = _("Pregunta")
+        verbose_name_plural = _("Preguntas")
+
+    def __unicode__(self):
+        return self.question
+
+
 class Organization(models.Model):
     TYPE_CHOICES = Choices(('O', 'Organizador'), ('E', 'Exhibidor'))
     type = models.CharField(max_length=1, choices=TYPE_CHOICES, null=True, blank=True)

@@ -8,7 +8,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView, DetailView, ListView
 
 from .models import Event, Organization
-from .views import HomeView, SpeakersView, SpeakersDetailView, ActivitiesView, AttendeeDetailView, AttendeeBadgeView, AttendeePNGView, AttendeePDFView, AttendeeReceiptView, ContentView, event, OrganizationsView
+from .views import HomeView, SpeakersView, SpeakersDetailView, ActivitiesView, AttendeeDetailView, AttendeeBadgeView, AttendeePNGView, AttendeePDFView, AttendeeReceiptView, ContentView, event, OrganizationsView, FAQView
 
 urlpatterns = [
 
@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^(?P<slug>[\w-]+)/venue/$', ContentView.as_view(page='venue'), name='venue'),
     url(r'^(?P<slug>[\w-]+)/hotels/$', ContentView.as_view(page='hotels'), name='hotels'),
     url(r'^(?P<slug>[\w-]+)/transportation/$', ContentView.as_view(page='transportation'), name='transportation'),
+    url(r'^(?P<slug>[\w-]+)/faq/$', FAQView.as_view(), name='faq'),
 
     # activities
     url(r'^(?P<slug>[\w-]+)/activities/$', ActivitiesView.as_view(), name='activities'),

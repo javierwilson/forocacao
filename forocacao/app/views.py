@@ -10,7 +10,7 @@ from django.conf import settings
 
 from braces.views import LoginRequiredMixin
 
-from .models import Event, Activity, Attendee, AttendeeReceipt, Content, Logo, Organization
+from .models import Event, Activity, Attendee, AttendeeReceipt, Content, Logo, Organization, Question
 from .pdf import createPDF
 from .png import createPNG
 
@@ -127,6 +127,20 @@ class SpeakersView(ListView):
     def get_context_data(self, **kwargs):
         context = super(SpeakersView, self).get_context_data(**kwargs)
         context['event'] = Event.objects.get(slug=self.kwargs['slug'])
+        return context
+
+
+class FAQView(ListView):
+
+    model = Question
+
+    def get_queryset(self):
+        return Question.objects.filter(event__slug=self.kwargs['slug'])
+
+    def get_context_data(self, **kwargs):
+        context = super(FAQView, self).get_context_data(**kwargs)
+        #context['title'] = self.title
+        #context['event'] = Event.objects.get(slug=self.kwargs['slug'])
         return context
 
 

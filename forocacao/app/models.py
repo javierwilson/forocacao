@@ -312,14 +312,30 @@ class Question(models.Model):
         return self.question
 
 
+
+class Topic(models.Model):
+    name = models.CharField(max_length=200, verbose_name=_('Name'))
+    weight = models.IntegerField()
+
+    class Meta:
+        ordering = ['weight']
+        verbose_name = _("Tema")
+        verbose_name_plural = _("Temas")
+
+    def __unicode__(self):
+        return self.name
+
+
+
 class Organization(models.Model):
-    TYPE_CHOICES = Choices(('O', 'Organizador'), ('E', 'Exhibidor'))
+    TYPE_CHOICES = Choices(('O', 'Organizador'), ('E', 'Exhibidor'), ('S', 'Speaker'))
     type = models.CharField(max_length=1, choices=TYPE_CHOICES, null=True, blank=True)
     event = models.ForeignKey('Event', verbose_name=_('Event'))
     name = models.CharField(max_length=50, null=True, blank=True, verbose_name=_('Name'))
     photo = models.ImageField(null=True, blank=True, verbose_name=_('Photo'))
     text = models.TextField(blank=True, verbose_name=_('Description'))
     url = models.URLField(null=True, blank=True)
+    topic = models.ForeignKey('Topic', null=True, blank=True, verbose_name=_('Topic'))
 
     class Meta:
         ordering = ['name']

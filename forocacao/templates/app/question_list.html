@@ -9,20 +9,39 @@
 
 <h1>Preguntas frecuentes</h1>
 <div>
+    <div class="col-md-8 clearfix">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 {% for object in object_list %}
-    <div class="col-md-5 clearfix">
-        <h3><a href="#">{{ object.question }}</a></h3>
-        <div class="contenido clear">
-        </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="heading{{ forloop.counter }}">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+
+        <h3>{{ object.question }}</h3>
+
+        </a>
+      </h4>
     </div>
-    <div class='clearfix'></div>
-    <div class="col-md-5 clearfix">
+    <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}">
+      <div class="panel-body">
+
         {{ object.answer|safe }}
+
+      </div>
     </div>
+  </div>
+
+
+    <!--
     <div class="col-md-10"><hr class="separador"/></div>
+    -->
 {% empty %}
     <h2>No hay datos.</h2>
 {% endfor %}
+</div>
+    </div>
 </div>
 
 </div>

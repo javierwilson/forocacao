@@ -1,0 +1,105 @@
+blockquote, body, div, h1, h2, h3, h4, 
+h5, h6, html, li, ol, p, ul { 
+	border: 0; margin: 0; padding: 0;
+	font: inherit; font-size: 100%;	font-weight: 400;
+	vertical-align: baseline; }
+img { border: 0; }
+
+body { margin: 0 auto 25px; width: 75%; }
+#top { background-color: #b2e4e0; border-radius: 0 0 15px 15px; margin-bottom: 3px; padding: 16px 16px 10px; }
+#content { border-radius: 14px; border: 3px solid #b7d85c; padding: 16px; width: 100%; }
+
+h1 { color: #02afa2; font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; font-size: 2em; text-align: center; }
+h2 { font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; margin-bottom: 10px; text-align: center; }
+h3 { font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; padding: 0 0 16px; }
+h3.title { color: #333; font-size: 1.5em; text-align: center; }
+
+div.partners { margin: 20px auto; text-align: center; width: 550px; }
+div.partners img { margin: 0 10px; vertical-align: middle; }
+.center { text-align: center; }
+div.addl { margin: 0 auto 35px; }
+div.addl img { width: 75px; }
+
+ul#menu { display: table; margin: 0 auto 4px; width: 100%; }
+ul#menu > li { background-color: #A6CE39; border: 2px solid #fff; display: table-cell; 
+	font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; list-style-type: none; text-align: center; }
+ul#menu > li.selected { background-color: #7BA30D; }
+ul#menu > li > a { color: #000; display: block; padding: 6px 0px; text-decoration: none; }
+ul#menu > li > a:hover { background-color: #7BA30D; transition: background-color .3s; }
+ul { margin: 14px 0 14px 45px; }
+ul > li { font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; margin-bottom: 3px; }
+
+a { text-decoration: none; color: #02afa2; }
+a:hover { -moz-transform: background-color .3s; -webkit-transform: background-color .3s; 
+	-o-transform: background-color .3s; background-color: #b2e4e0; transition: background-color .3s; }
+
+a.resource { background-color: #E4E4E4; border: 1px solid #333; border-radius: 4px; color: #333; display: inline-block;
+     font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; font-size: .75em; height: 120px; margin: 0 4px 18px 0;
+     padding: 8px; text-align: center; vertical-align: top; width: 100px; }
+a.resource > img { padding: 0 30% 5px; width: 40%; }
+a.resource:hover { background-color: #ccc; }
+div.partners > a:hover { background-color: #fff; }
+#top a {
+    font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif;
+    display: block; font-size: 1.36em; margin: 14px 0 8px; text-align: center;
+}
+
+td.FCfn { font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; }
+td.FCin { display: block; margin-bottom: 10px; } 
+
+input[name="Submit"], input[name="Reset"] {
+	-moz-transform: background-color .15s, border .2s; -webkit-transform: background-color .15s, border .2s; 
+	-o-transform: background-color .15s, border .2s; background-color: #EBF3F3; border-radius: 8px;
+	border: 4px solid #fff; box-shadow: 0 0 2px 2px #DCDCDC; color: #03B7B7; cursor: pointer; display: inline-block;
+	font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif;	font-size: 1.2em; margin: 8px; padding: 13px 0px; 
+	text-align: center; transition: background-color .15s, border .2s; width: 225px; }
+input[name="Submit"]:hover, input[name="Reset"]:hover { background-color: #E9E9E9; border: 4px solid #02AFA2; }
+.FCin { font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; }
+textarea { resize: none; }
+.cfimg { float: left; width: 190px; }
+
+h4 { font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; font-size: 1.3em; text-align: center; }
+h5 { font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; padding-bottom: 14px; text-align: center; }
+
+div.agenda { border-bottom: 2px solid #ccc; font-family: "Franklin Gothic Book",Arial,Helvetica,sans-serif; padding: 12px 5px; }
+div.agendaheaders { background-color: #ccc; padding: 5px; }
+div.agendaheaders > div { font-weight: 700; }
+div.agenda > div { display: inline-block; vertical-align: top; }
+div.time { width: 16%; }
+div.activity { margin-right: 3%; width: 36%; }
+div.panelists { width: 38%; }
+
+.forofoto:hover { background-color: transparent; }
+.forofoto > img { margin: 10px 1%; width: 30%; }
+.foto2 > img { width: 45% }
+
+@media screen and (max-width: 1080px) {
+	body { width: 90%; }
+}
+
+@media screen and (max-width: 850px) {
+	.cfimg { width: 130px; }
+	div.agenda { font-size: .8em; }
+}
+
+@media screen and (max-width: 635px) {
+	body { width: 96%; }
+	div.partners { width: 200px; }
+	div.partners img { height: 40px; margin: 5px 10px; }
+	div.addl img { height: auto; width: 60px; }
+}
+
+@media screen and (max-width: 500px) {
+	ul#menu > li { border-left: 1px solid #fff; border-right: 1px solid #fff;}
+	ul#menu > li > a { font-size: .6em; }
+	h1 { font-size: 1.25em; }
+	h2 { font-size: .8em; }
+	h3 { font-size: .8em; }
+	ul {  font-size: .75em; margin-left: 25px; }
+	table.FCtablein td { display: block; } 
+	td.FCfn { font-size: .8em; }
+	input, textarea { width: 200px; }
+    	input[type="checkbox"] { width: auto; } 
+	input[name="Submit"], input[name="Reset"] { width: 165px; padding: 4px; }
+	div.agenda { font-size: .5em; }
+}

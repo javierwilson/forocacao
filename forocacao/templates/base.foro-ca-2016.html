@@ -35,6 +35,15 @@
 
 <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=969794233104623";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
@@ -78,7 +87,10 @@
     <li><a href="{% url 'app:transportation' event.slug %}">Transporte</a></li>
     <li><a href="{% url 'app:hotels' event.slug %}">Hoteles</a></li>
   </div>
+  <!--
   <a href="{% url 'app:faq'  event.slug %}" class="btn btn-default">Preguntas frecuentes</a>
+  -->
+  <a href="{% url 'app:gallery'  event.slug %}" class="btn btn-default">Fotos</a>
   <div class="btn-group" role="group">
   <!--
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -90,6 +102,7 @@
     <li><a href="{% url 'app:speakers' event.slug %}">Enlaces</a></li>
   </div>
   -->
+  <a href="{% url 'app:presentations' event.slug %}" class="btn btn-default">Presentaciones</a>
   <a href="{% url 'app:events' %}" class="btn btn-default">Otros eventos</a>
 </div>
                 </ul>
@@ -119,7 +132,9 @@
             <img src="{% thumbnail object.image 800x308 %}" class="img-responsive" alt="{{ object.name }}" title="{{ object.name }} {{ object.title }}"/>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12">
-            <img src="{% thumbnail object.translucid 400x300 %}" class="img-responsive" alt="{{ object.name }}" title="{{ object.name }} {{ object.title }}"/>
+            <!-- <img src="{% thumbnail object.translucid 400x300 %}" class="img-responsive" alt="{{ object.name }}" title="{{ object.name }} {{ object.title }}"/> -->
+            <!-- iframe src="https://www.facebook.com/video/embed?video_id=1132329156841569&autoplay=true" width="600" height="400" frameborder="0"></iframe -->
+<div class="fb-video" data-href="https://www.facebook.com/CacaoMovilLWR/videos/1133252113415940/" data-width="600" data-show-text="false"><blockquote cite="https://www.facebook.com/CacaoMovilLWR/videos/1133252113415940/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CacaoMovilLWR/videos/1133252113415940/">II Foro centroamericano de cacao</a><p>II Foro centroamericano de cacao</p>Posted by <a href="https://www.facebook.com/CacaoMovilLWR/">Cacao Movil</a> on Wednesday, August 10, 2016</blockquote></div>
         </div>
         <div class="col-md-12 visible-xs">
             <img src="{% static 'img/logoforocacaoregional-movil.png' %}" title="{{ object.name }} {{ object.title }}"/>
@@ -308,6 +323,7 @@
                     </ul>
                     -->
                     <p class="copyright text-muted small">Copyright &copy; {{event.organizer }} 2016. All Rights Reserved</p>
+
                 </div>
             </div>
         </div>

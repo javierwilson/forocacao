@@ -1,0 +1,5 @@
+{% if photo %}
+	<a title="{{ photo.title }}" href="{% url 'app:photo' 'foro-regional-de-cacao-centroamericano-2016' photo.slug %}">
+		<img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}" />
+	</a>
+{% endif %}

@@ -338,7 +338,7 @@ class Organization(models.Model):
     topic = models.ForeignKey('Topic', null=True, blank=True, verbose_name=_('Topic'))
 
     class Meta:
-        ordering = ['name']
+        ordering = ['topic__weight', 'name']
 
     def __unicode__(self):
         return self.name

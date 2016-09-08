@@ -75,7 +75,7 @@ class ActivityForm(forms.ModelForm):
 class ActivityAdmin(admin.ModelAdmin):
     form = ActivityForm
     prepopulated_fields = {"slug": ("name",)}
-    list_display = ['start', 'end', 'name' ]
+    list_display = ['start', 'name', 'organizer' ]
 
 class ProfessionAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}

@@ -173,6 +173,20 @@ class ActivitiesView(ListView):
         context['event'] = Event.objects.get(slug=self.kwargs['slug'])
         return context
 
+
+class PresentationsView(ListView):
+
+    model = Activity
+    template_name = 'app/presentation_list.html'
+
+    def get_queryset(self):
+        return Activity.objects.filter(event__slug=self.kwargs['slug'])
+
+    def get_context_data(self, **kwargs):
+        context = super(PresentationsView, self).get_context_data(**kwargs)
+        context['event'] = Event.objects.get(slug=self.kwargs['slug'])
+        return context
+
 # orphan
 def event(request,slug):
     #if not url.startswith('/'):

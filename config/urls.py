@@ -7,6 +7,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 
+from photologue.views import PhotoListView, GalleryListView, GalleryDetailView
+
 from forocacao.app.views import HomeView
 
 urlpatterns = [
@@ -26,6 +28,7 @@ urlpatterns = [
 
     # Your stuff: custom urls includes go here
     url(r'', include("forocacao.app.urls", namespace="app")),
+    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
